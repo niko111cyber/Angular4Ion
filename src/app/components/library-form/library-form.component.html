@@ -1,0 +1,31 @@
+<form [formGroup]="libraryForm" (ngSubmit)="onSubmit()">
+
+<img src="/assets/nouveau.png">
+<h1>Mettre à jour une bibliothèque</h1>
+
+<div class="line"><label>Nom de la bibliothèque:    <input type="text" formControlName="label" ></label></div>
+<div class="line"><label>Type:                      <input type="text" formControlName="type"></label>
+    <div *ngIf="type.invalid && (type.dirty || type.touched)" class="alert">
+        <div *ngIf="type.errors.toto">Le type doit être PUBLIC ou NATIONAL</div>
+    </div>
+</div>
+
+<div class="shape"><h3>Directeur</h3>
+    <div class="line"><label>Prénom:                    <input type="text" formControlName="firstname"></label></div>
+    <div class="line"><label>Nom:                       <input type="text" formControlName="lastname"></label></div>
+</div>
+
+<div class="shape"><h3>Adresse</h3>
+    <div class="line"><label>Numéro de rue:             <input type="text" formControlName="numberStreet"></label></div>
+    <div class="line"><label>rue                        <input type="text" formControlName="street"></label></div>
+    <div class="line"><label>Code postal:               <input type="number" formControlName="postalCode"></label></div>
+    <div class="line"><label>Ville:                     <input type="text" formControlName="city"></label></div>
+        <div *ngIf="city.invalid && (city.dirty || libraryForm.get('city').touched)" class="alert">
+            <div *ngIf="city.errors.required">La ville est obligatoire</div>
+            <div *ngIf="city.errors.minlength">au moins 4</div>
+        </div>
+</div>
+
+<div class="line"><button [disabled]="libraryForm.invalid">Sauvegarder</button></div>
+
+</form>

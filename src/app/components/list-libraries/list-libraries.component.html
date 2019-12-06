@@ -1,0 +1,14 @@
+
+<!-- <div *ngIf="libraries.length > 5; else showlibraries">Trop</div>
+<ng-template #showlibraries>
+<ul>
+        <li *ngFor="let library of libraries">
+            {{ library.label }}
+            {{ library.type }}
+            {{ library.directorDTO.surname }} {{ library.directorDTO.name }}
+        </li>
+</ul>
+</ng-template> -->
+
+<app-library *ngFor="let titi of libraries"
+[library]="titi"></app-library>

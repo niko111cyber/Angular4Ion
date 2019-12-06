@@ -1,0 +1,20 @@
+<div class="library">
+        <div class="label"> {{library.label}}</div>
+          <div class="adress">
+            <div class="rue">
+                {{library.addressDTO.numberStreet + ' ' + library.addressDTO.street}}
+            </div>
+            <div class="codePostalVille">
+                {{library.addressDTO.postalCode + ' ' + library.addressDTO.city}}
+            </div>
+
+        </div>
+        <div class="director">
+                {{library.directorDTO.firstname + ' ' + library.directorDTO.lastname.toUpperCase()}}
+        </div>
+        
+        <button class="fa fa-trash" (click)="deleteLibrary()"></button>
+        <button class="fa fa-edit" routerLink="/modifier/{{library.id}}" ></button>
+    </div>
+
+

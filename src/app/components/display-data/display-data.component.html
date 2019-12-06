@@ -1,0 +1,21 @@
+<p><b>{{ name }} est le roi des ...</b></p>
+
+<p>La somme de 3 et 5 fait : {{ 3 + 5 }}</p>
+
+<img [src]="logoPath">
+<!-- <button (click)="showLogo()">BNPP LOGO</button> -->
+<p>{{ message }}</p>
+<button (click)="showLogoAndMessage()">BNPP LOGO</button>
+
+<br>
+<br>
+<p>-- 1ère méthode--</p>
+<input (keyup)="onKey($event)">
+<br>
+{{values}}
+
+<p>-- 2ème méthode--</p>
+<!-- fait la même chose que le onKey, mais -->
+<input [(ngModel)]="myProperty">
+<p>{{myProperty}}</p>
+
